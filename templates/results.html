@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Refined Prompts for: "{{ original_prompt }}"</h2>
+    <div class="cards">
+        {% for prompt in refined_prompts %}
+        <form action="{{ url_for('select') }}" method="post" class="card {% if prompt == recommended_prompt %}recommended{% endif %}">
+            <input type="hidden" name="chosen_prompt" value="{{ prompt }}">
+            <button type="submit">
+                <p>{{ prompt }}</p>
+                {% if prompt == recommended_prompt %}
+                <span class="badge">Recommended</span>
+                {% endif %}
+            </button>
+        </form>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

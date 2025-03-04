@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <h2>Your Selected Prompt</h2>
+  <div class="selected-card">
+      <p>{{ chosen_prompt }}</p>
+  </div>
+  <div class="export-options">
+      <h3>Export Your Prompt:</h3>
+      <form action="{{ url_for('export') }}" method="post" class="export-form">
+          <input type="hidden" name="chosen_prompt" value="{{ chosen_prompt }}">
+          <button type="submit" name="export_format" value="txt">Export as TXT</button>
+          <button type="submit" name="export_format" value="pdf">Export as PDF</button>
+      </form>
+  </div>
+</div>
+{% endblock %}

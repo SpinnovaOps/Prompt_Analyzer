@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Enter your prompt</h2>
+    <form action="{{ url_for('refine') }}" method="post" class="prompt-form">
+        <input type="text" name="prompt" placeholder="Type your prompt here..." required>
+        <button type="submit">Refine Prompt</button>
+    </form>
+</div>
+{% endblock %}
