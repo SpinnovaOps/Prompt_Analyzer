@@ -5,7 +5,7 @@ import random
 app = Flask(__name__)
 
 # Google Gemini API configuration
-GEMINI_API_KEY = "AIzaSyCjeWAsyXA24ercu7XRISggxH0_Fzf68Kw"
+GEMINI_API_KEY = "API KEY"
 GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta2/models/gemini/text:generate?key={GEMINI_API_KEY}"
 
 def call_gemini_api_with_variation(prompt_text, temperature=0.9):
